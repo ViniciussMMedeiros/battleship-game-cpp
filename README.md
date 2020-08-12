@@ -1,4 +1,4 @@
-#battleship-game-cpp
+# battleship-game-cpp
 
 <p>
 This game was created by me, aiming to practice the concepts I learned while studying C and C++.
