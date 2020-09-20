@@ -167,24 +167,24 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
 {
   // this function works to position the ships in the single player game board randomly
 
-  int numberOfShipsPlayerTwoPlayerOne = 0, maximumnumberOfShipsPlayerTwoPlayerOne = 5;
+  int numberOfShipsPlayerOne = 0, maximumnumberOfShipsPlayerOne = 5;
 
-  int numberOfDestroyersPlayerTwoPlayerOne = 0, maximumNumberOfDestroyersPlayerTwoPlayerOne = 1;
-  int numberOfSubmarinesPlayerTwoPlayerOne = 0, maximumNumberOfSubmarinesPlayerTwoPlayerOne = 1;
-  int numberOfCruisersPlayerTwoPlayerOne = 0, maximumNumberOfCruisersPlayerTwoPlayerOne = 1;
-  int numberOfBattleshipsPlayerTwoPlayerOne = 0, maximumNumberOfBattleshipsPlayerTwoPlayerOne = 1;
-  int numberOfCarriersPlayerTwoPlayerOne = 0, maximumNumberOfCarriersPlayerTwoPlayerOne = 1;
+  int numberOfDestroyersPlayerOne = 0, maximumNumberOfDestroyersPlayerOne = 1;
+  int numberOfSubmarinesPlayerOne = 0, maximumNumberOfSubmarinesPlayerOne = 1;
+  int numberOfCruisersPlayerOne = 0, maximumNumberOfCruisersPlayerOne = 1;
+  int numberOfBattleshipsPlayerOne = 0, maximumNumberOfBattleshipsPlayerOne = 1;
+  int numberOfCarriersPlayerOne = 0, maximumNumberOfCarriersPlayerOne = 1;
 
-  bool destroyerPositionedPlayerTwoPlayerOne = false;
-  bool submarinePositionedPlayerTwoPlayerOne = false;
-  bool cruiserPositionedPlayerTwoPlayerOne = false;
-  bool battleshipPositionedPlayerTwoPlayerOne = false;
-  bool carrierPositionedPlayerTwoPlayerOne = false;
+  bool destroyerPositionedPlayerOne = false;
+  bool submarinePositionedPlayerOne = false;
+  bool cruiserPositionedPlayerOne = false;
+  bool battleshipPositionedPlayerOne = false;
+  bool carrierPositionedPlayerOne = false;
 
-  while (numberOfShipsPlayerTwoPlayerOne < maximumnumberOfShipsPlayerTwoPlayerOne)
+  while (numberOfShipsPlayerOne < maximumnumberOfShipsPlayerOne)
   {
 
-    while (numberOfDestroyersPlayerTwoPlayerOne < maximumNumberOfDestroyersPlayerTwoPlayerOne && destroyerPositionedPlayerTwoPlayerOne == false)
+    while (numberOfDestroyersPlayerOne < maximumNumberOfDestroyersPlayerOne && destroyerPositionedPlayerOne == false)
     {
 
       int aleatoryRow = rand() % 10;
@@ -198,14 +198,14 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
         {
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'D';
           gameBoardPlayerOne[aleatoryRow + 1][aleatoryColumn] = 'D';
-          destroyerPositionedPlayerTwoPlayerOne = true;
+          destroyerPositionedPlayerOne = true;
         }
 
         else if ((aleatoryRow <= 9 && aleatoryRow >= 1) && (gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
         {
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'D';
           gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] = 'D';
-          destroyerPositionedPlayerTwoPlayerOne = true;
+          destroyerPositionedPlayerOne = true;
         }
       }
 
@@ -215,24 +215,24 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
         {
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'D';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 1] = 'D';
-          destroyerPositionedPlayerTwoPlayerOne = true;
+          destroyerPositionedPlayerOne = true;
         }
 
         if ((aleatoryColumn <= 9 && aleatoryColumn >= 1) && (gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
         {
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'D';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] = 'D';
-          destroyerPositionedPlayerTwoPlayerOne = true;
+          destroyerPositionedPlayerOne = true;
         }
       }
-      if (destroyerPositionedPlayerTwoPlayerOne == true)
+      if (destroyerPositionedPlayerOne == true)
       {
-        numberOfDestroyersPlayerTwoPlayerOne++;
-        numberOfShipsPlayerTwoPlayerOne++;
+        numberOfDestroyersPlayerOne++;
+        numberOfShipsPlayerOne++;
       }
     }
 
-    while (numberOfSubmarinesPlayerTwoPlayerOne < maximumNumberOfSubmarinesPlayerTwoPlayerOne && submarinePositionedPlayerTwoPlayerOne == false)
+    while (numberOfSubmarinesPlayerOne < maximumNumberOfSubmarinesPlayerOne && submarinePositionedPlayerOne == false)
     {
 
       int aleatoryRow = rand() % 10;
@@ -246,7 +246,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow + 1][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow + 2][aleatoryColumn] = 'S';
-          submarinePositionedPlayerTwoPlayerOne = true;
+          submarinePositionedPlayerOne = true;
         }
 
         else if (aleatoryRow <= 9 && aleatoryRow >= 2 && (gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -254,7 +254,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] = 'S';
-          submarinePositionedPlayerTwoPlayerOne = true;
+          submarinePositionedPlayerOne = true;
         }
       }
 
@@ -266,7 +266,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 1] = 'S';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 2] = 'S';
-          submarinePositionedPlayerTwoPlayerOne = true;
+          submarinePositionedPlayerOne = true;
         }
 
         if (aleatoryColumn <= 9 && aleatoryColumn > 1 && (gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -274,18 +274,18 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'S';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] = 'S';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] = 'S';
-          submarinePositionedPlayerTwoPlayerOne = true;
+          submarinePositionedPlayerOne = true;
         }
       }
 
-      if (submarinePositionedPlayerTwoPlayerOne == true)
+      if (submarinePositionedPlayerOne == true)
       {
-        numberOfSubmarinesPlayerTwoPlayerOne++;
-        numberOfShipsPlayerTwoPlayerOne++;
+        numberOfSubmarinesPlayerOne++;
+        numberOfShipsPlayerOne++;
       }
     }
 
-    while (numberOfCruisersPlayerTwoPlayerOne < maximumNumberOfCruisersPlayerTwoPlayerOne && cruiserPositionedPlayerTwoPlayerOne == false)
+    while (numberOfCruisersPlayerOne < maximumNumberOfCruisersPlayerOne && cruiserPositionedPlayerOne == false)
     {
       int aleatoryRow = rand() % 10;
       int aleatoryColumn = rand() % 10;
@@ -298,7 +298,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow + 1][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow + 2][aleatoryColumn] = 'C';
-          cruiserPositionedPlayerTwoPlayerOne = true;
+          cruiserPositionedPlayerOne = true;
         }
 
         else if (aleatoryRow <= 9 && aleatoryRow > 1 && (gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -306,7 +306,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] = 'C';
-          cruiserPositionedPlayerTwoPlayerOne = true;
+          cruiserPositionedPlayerOne = true;
         }
       }
 
@@ -318,7 +318,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 1] = 'C';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 2] = 'C';
-          cruiserPositionedPlayerTwoPlayerOne = true;
+          cruiserPositionedPlayerOne = true;
         }
 
         if (aleatoryColumn <= 9 && aleatoryColumn > 1 && (gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -326,18 +326,18 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn] = 'C';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] = 'C';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] = 'C';
-          cruiserPositionedPlayerTwoPlayerOne = true;
+          cruiserPositionedPlayerOne = true;
         }
       }
 
-      if (cruiserPositionedPlayerTwoPlayerOne == true)
+      if (cruiserPositionedPlayerOne == true)
       {
-        numberOfCruisersPlayerTwoPlayerOne++;
-        numberOfShipsPlayerTwoPlayerOne++;
+        numberOfCruisersPlayerOne++;
+        numberOfShipsPlayerOne++;
       }
     }
 
-    while (numberOfBattleshipsPlayerTwoPlayerOne < maximumNumberOfBattleshipsPlayerTwoPlayerOne && battleshipPositionedPlayerTwoPlayerOne == false)
+    while (numberOfBattleshipsPlayerOne < maximumNumberOfBattleshipsPlayerOne && battleshipPositionedPlayerOne == false)
     {
       int aleatoryRow = rand() % 10;
       int aleatoryColumn = rand() % 10;
@@ -351,7 +351,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow + 1][aleatoryColumn] = 'B';
           gameBoardPlayerOne[aleatoryRow + 2][aleatoryColumn] = 'B';
           gameBoardPlayerOne[aleatoryRow + 3][aleatoryColumn] = 'B';
-          battleshipPositionedPlayerTwoPlayerOne = true;
+          battleshipPositionedPlayerOne = true;
         }
 
         else if (aleatoryRow <= 9 && aleatoryRow > 2 && (gameBoardPlayerOne[aleatoryRow - 3][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -360,7 +360,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] = 'B';
           gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] = 'B';
           gameBoardPlayerOne[aleatoryRow - 3][aleatoryColumn] = 'B';
-          battleshipPositionedPlayerTwoPlayerOne = true;
+          battleshipPositionedPlayerOne = true;
         }
       }
 
@@ -373,7 +373,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 1] = 'B';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 2] = 'B';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 3] = 'B';
-          battleshipPositionedPlayerTwoPlayerOne = true;
+          battleshipPositionedPlayerOne = true;
         }
 
         if (aleatoryColumn <= 9 && aleatoryColumn > 2 && (gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 3] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -382,17 +382,17 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] = 'B';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] = 'B';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 3] = 'B';
-          battleshipPositionedPlayerTwoPlayerOne = true;
+          battleshipPositionedPlayerOne = true;
         }
       }
-      if (battleshipPositionedPlayerTwoPlayerOne == true)
+      if (battleshipPositionedPlayerOne == true)
       {
-        numberOfBattleshipsPlayerTwoPlayerOne++;
-        numberOfShipsPlayerTwoPlayerOne++;
+        numberOfBattleshipsPlayerOne++;
+        numberOfShipsPlayerOne++;
       }
     }
 
-    while (numberOfCarriersPlayerTwoPlayerOne < maximumNumberOfCarriersPlayerTwoPlayerOne)
+    while (numberOfCarriersPlayerOne < maximumNumberOfCarriersPlayerOne)
     {
       int aleatoryRow = rand() % 10;
       int aleatoryColumn = rand() % 10;
@@ -407,7 +407,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow + 2][aleatoryColumn] = 'K';
           gameBoardPlayerOne[aleatoryRow + 3][aleatoryColumn] = 'K';
           gameBoardPlayerOne[aleatoryRow + 4][aleatoryColumn] = 'K';
-          carrierPositionedPlayerTwoPlayerOne = true;
+          carrierPositionedPlayerOne = true;
         }
 
         else if (aleatoryRow <= 9 && aleatoryRow > 3 && (gameBoardPlayerOne[aleatoryRow - 4][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 3][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow - 1][aleatoryColumn] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -417,7 +417,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow - 2][aleatoryColumn] = 'K';
           gameBoardPlayerOne[aleatoryRow - 3][aleatoryColumn] = 'K';
           gameBoardPlayerOne[aleatoryRow - 4][aleatoryColumn] = 'K';
-          carrierPositionedPlayerTwoPlayerOne = true;
+          carrierPositionedPlayerOne = true;
         }
       }
 
@@ -431,7 +431,7 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 2] = 'K';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 3] = 'K';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn + 4] = 'K';
-          carrierPositionedPlayerTwoPlayerOne = true;
+          carrierPositionedPlayerOne = true;
         }
 
         if (aleatoryColumn <= 9 && aleatoryColumn > 3 && (gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 4] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 3] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 1] == 'W' && gameBoardPlayerOne[aleatoryRow][aleatoryColumn] == 'W'))
@@ -441,13 +441,13 @@ void positionShipsSinglePlayer(char gameBoardPlayerOne[10][10])
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 2] = 'K';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 3] = 'K';
           gameBoardPlayerOne[aleatoryRow][aleatoryColumn - 4] = 'K';
-          carrierPositionedPlayerTwoPlayerOne = true;
+          carrierPositionedPlayerOne = true;
         }
       }
-      if (carrierPositionedPlayerTwoPlayerOne == true)
+      if (carrierPositionedPlayerOne == true)
       {
-        numberOfCarriersPlayerTwoPlayerOne++;
-        numberOfShipsPlayerTwoPlayerOne++;
+        numberOfCarriersPlayerOne++;
+        numberOfShipsPlayerOne++;
       }
     }
   }
